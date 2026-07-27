@@ -1,16 +1,16 @@
 /* ============================================================
-   NOVA WORKSPACE — DESIGN SYSTEM TOKENS v3
-   Enhanced typography, high contrast, clean spacing & glassmorphism.
+   NOVA WORKSPACE — CREATIVE DIRECTOR DESIGN SYSTEM TOKENS v4
+   Linear + Vercel + Notion + Apple inspired dark glassmorphism.
    ============================================================ */
 
 :root {
   /* Neutral ramp */
   --n-0:   #ffffff;
   --n-25:  #fafafa;
-  --n-50:  #f5f5f7;
-  --n-100: #ebebf0;
-  --n-150: #e0e0e8;
-  --n-200: #d1d1de;
+  --n-50:  #f8fafc;
+  --n-100: #f1f5f9;
+  --n-150: #e2e8f0;
+  --n-200: #cbd5e1;
   --n-300: #94a3b8;
   --n-400: #64748b;
   --n-500: #475569;
@@ -32,79 +32,53 @@
   --v-600: #5729f5;
   --v-700: #4318d6;
   --v-800: #3310a8;
-  --v-900: #230b78;
 
-  /* Accent — Cyan */
+  /* Accents */
   --c-300: #67e8f9;
   --c-400: #22d3ee;
   --c-500: #06b6d4;
 
-  /* Accent — Emerald */
   --e-400: #34d399;
   --e-500: #10b981;
-  --e-600: #059669;
 
-  /* Accent — Amber */
   --a-400: #fbbf24;
   --a-500: #f59e0b;
 
-  /* Semantic — Rose */
   --r-400: #fb7185;
   --r-500: #f43f5e;
-  --r-600: #e11d48;
 }
 
 /* ---------- DARK THEME (DEFAULT) ---------- */
 [data-theme="dark"], :root {
-  --bg-base:        #070910;
-  --bg-surface:     #0a0d16;
-  --bg-elevated:    #0f1523;
-  --bg-float:       #111827;
+  --bg-base:        #060811;
+  --bg-surface:     #0a0d17;
+  --bg-elevated:    #0f1424;
+  --bg-float:       #12182b;
   --bg-subtle:      rgba(255,255,255,0.03);
   --bg-hover:       rgba(255,255,255,0.06);
   --bg-active:      rgba(255,255,255,0.09);
-  --bg-selection:   rgba(110,74,255,0.25);
-  --bg-glass:       rgba(10,13,22,0.85);
+  --bg-glass:       rgba(10,13,23,0.85);
 
   --border-0:       rgba(255,255,255,0.04);
   --border-1:       rgba(255,255,255,0.08);
   --border-2:       rgba(255,255,255,0.14);
   --border-3:       rgba(255,255,255,0.22);
   --border-focus:   var(--v-500);
-  --border-error:   var(--r-500);
-  --border-success: var(--e-500);
 
   --text-1:         #ffffff;
   --text-2:         #cbd5e1;
   --text-3:         #94a3b8;
   --text-4:         #64748b;
   --text-brand:     var(--v-300);
-  --text-error:     var(--r-400);
-  --text-success:   var(--e-400);
-  --text-warning:   var(--a-400);
 
   --btn-primary-bg:      linear-gradient(135deg, #6e4aff 0%, #5729f5 100%);
   --btn-primary-hover:   linear-gradient(135deg, #7e5cff 0%, #683bfb 100%);
-  --btn-primary-active:  var(--v-700);
   --btn-primary-text:    #ffffff;
-  --btn-ghost-bg:        transparent;
-  --btn-ghost-hover:     var(--bg-hover);
-  --btn-ghost-border:    var(--border-2);
-  --btn-ghost-text:      var(--text-2);
 
-  --input-bg:         #111827;
-  --input-border:     rgba(255,255,255,0.12);
-  --input-hover:      rgba(255,255,255,0.2);
-  --input-text:       var(--text-1);
-  --input-placeholder: var(--text-4);
-  --input-focus-glow: 0 0 0 3px rgba(110,74,255,0.25);
-
-  --shadow-xs:  0 1px 2px rgba(0,0,0,0.4);
-  --shadow-sm:  0 2px 8px rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.2);
-  --shadow-md:  0 4px 16px rgba(0,0,0,0.45), 0 2px 4px rgba(0,0,0,0.25);
-  --shadow-lg:  0 12px 40px rgba(0,0,0,0.55), 0 4px 12px rgba(0,0,0,0.35);
-  --shadow-xl:  0 24px 80px rgba(0,0,0,0.65), 0 8px 24px rgba(0,0,0,0.45);
-  --shadow-brand: 0 4px 20px rgba(110,74,255,0.35);
+  --shadow-sm:  0 2px 8px rgba(0,0,0,0.4);
+  --shadow-md:  0 4px 16px rgba(0,0,0,0.45);
+  --shadow-lg:  0 12px 40px rgba(0,0,0,0.55);
+  --shadow-brand: 0 4px 24px rgba(110,74,255,0.4);
 }
 
 /* ---------- LIGHT THEME ---------- */
@@ -116,7 +90,6 @@
   --bg-subtle:      #f1f5f9;
   --bg-hover:       #f8fafc;
   --bg-active:      #e2e8f0;
-  --bg-selection:   var(--v-50);
   --bg-glass:       rgba(255,255,255,0.9);
 
   --border-0:       #f1f5f9;
@@ -131,77 +104,49 @@
   --text-4:         #94a3b8;
   --text-brand:     var(--v-600);
 
-  --input-bg:          #ffffff;
-  --input-border:      #cbd5e1;
-  --input-hover:       #94a3b8;
-  --input-text:        #0f172a;
-  --input-placeholder: #94a3b8;
-
-  --shadow-xs:  0 1px 2px rgba(0,0,0,0.05);
-  --shadow-sm:  0 2px 8px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-  --shadow-md:  0 4px 16px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.04);
-  --shadow-lg:  0 12px 40px rgba(0,0,0,0.09), 0 4px 12px rgba(0,0,0,0.05);
-  --shadow-xl:  0 24px 80px rgba(0,0,0,0.12), 0 8px 24px rgba(0,0,0,0.07);
+  --shadow-sm:  0 2px 8px rgba(0,0,0,0.06);
+  --shadow-md:  0 4px 16px rgba(0,0,0,0.07);
+  --shadow-lg:  0 12px 40px rgba(0,0,0,0.09);
 }
 
-/* ---------- SPACING (8px) ---------- */
+/* ---------- SPACING & TYPOGRAPHY ---------- */
 :root {
   --s-1: 4px;   --s-2: 8px;   --s-3: 12px;  --s-4: 16px;
   --s-5: 20px;  --s-6: 24px;  --s-7: 28px;  --s-8: 32px;
-  --s-10: 40px; --s-12: 48px; --s-14: 56px; --s-16: 64px;
+  --s-10: 40px; --s-12: 48px; --s-16: 64px;
 
-  /* Radius */
   --r-1: 4px;  --r-2: 6px;  --r-3: 8px;
   --r-4: 10px; --r-5: 12px; --r-6: 16px;
-  --r-7: 20px; --r-8: 24px; --r-full: 9999px;
+  --r-7: 20px; --r-full: 9999px;
 
-  /* Typography - Crisp & Bold Headings */
   --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 
   --fs-2xs: 11px; --fs-xs: 12px;  --fs-sm: 13px;
   --fs-md:  15px; --fs-lg: 18px;  --fs-xl: 22px;
-  --fs-2xl: 26px; --fs-3xl: 32px; --fs-4xl: 40px;
-  --fs-5xl: 52px; --fs-6xl: 64px;
+  --fs-2xl: 26px; --fs-3xl: 32px; --fs-4xl: 42px;
 
-  --fw-3: 300; --fw-4: 400; --fw-5: 500;
-  --fw-6: 600; --fw-7: 700; --fw-8: 800; --fw-9: 900;
+  --fw-4: 400; --fw-5: 500; --fw-6: 600; --fw-7: 700; --fw-8: 800; --fw-9: 900;
 
-  --lh-1: 1.15; --lh-2: 1.25; --lh-3: 1.4;
-  --lh-4: 1.6;  --lh-5: 1.75;
+  --lh-1: 1.15; --lh-2: 1.25; --lh-4: 1.6;
 
   --ls-tight:  -0.03em;
   --ls-snug:   -0.015em;
-  --ls-normal: 0;
-  --ls-wide:   0.025em;
 
-  /* Motion */
   --ease:        cubic-bezier(0.4, 0, 0.2, 1);
-  --ease-out:    cubic-bezier(0, 0, 0.2, 1);
-  --dur-1: 80ms;  --dur-2: 140ms; --dur-3: 220ms;
-  --dur-4: 320ms; --dur-5: 480ms;
+  --dur-1: 80ms;  --dur-2: 140ms; --dur-3: 220ms; --dur-4: 320ms;
 }
 
-/* ============================================================
-   RESET
-   ============================================================ */
-*, *::before, *::after {
-  box-sizing: border-box; margin: 0; padding: 0;
-  -webkit-tap-highlight-color: transparent;
-}
+/* RESET */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { font-size: 16px; -webkit-text-size-adjust: 100%; }
 body {
   font-family: var(--font);
   font-size: var(--fs-md);
-  font-weight: var(--fw-4);
-  line-height: var(--lh-4);
   color: var(--text-1);
   background: var(--bg-base);
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
   min-height: 100dvh;
-  overflow-x: hidden;
 }
 a { color: inherit; text-decoration: none; }
 button { font-family: inherit; cursor: pointer; border: none; background: none; }
