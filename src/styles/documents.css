@@ -1,0 +1,187 @@
+/* ============================================================
+   NOVA WORKSPACE — DOCUMENTS MODULE STYLES v6
+   Enterprise AI-Native Document Workspace & Block Editor
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   DOCUMENTS HOME HERO & CARDS
+   ------------------------------------------------------------ */
+.docs-hero-banner {
+  background: linear-gradient(135deg, rgba(110,74,255,0.14) 0%, rgba(6,182,212,0.06) 60%, var(--bg-surface) 100%);
+  border: 1px solid var(--border-2);
+  border-radius: var(--r-7);
+  padding: var(--s-8);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.docs-hero-title {
+  font-size: clamp(24px, 3.2vw, 36px);
+  font-weight: var(--fw-9);
+  color: var(--text-1);
+  letter-spacing: var(--ls-tight);
+  line-height: var(--lh-2);
+  margin-bottom: var(--s-2);
+}
+
+/* ------------------------------------------------------------
+   STICKY EDITOR HEADER & TYPOGRAPHY-FIRST BLOCK EDITOR
+   ------------------------------------------------------------ */
+.editor-sticky-header {
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-1);
+  padding: var(--s-4) var(--s-8);
+  position: sticky;
+  top: 60px;
+  z-index: 90;
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.doc-cover-banner {
+  height: 140px;
+  width: 100%;
+  border-radius: var(--r-6) var(--r-6) 0 0;
+  position: relative;
+  margin-bottom: -32px;
+}
+
+.doc-emoji-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--r-5);
+  background: var(--bg-surface);
+  border: 2px solid var(--border-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  box-shadow: var(--shadow-md);
+  margin-left: var(--s-8);
+  position: relative;
+  z-index: 2;
+}
+
+.block-editor-canvas {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: var(--s-8) var(--s-6) var(--s-20);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+  font-family: var(--font);
+}
+
+.block-editor-title {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: var(--fw-9);
+  color: var(--text-1);
+  letter-spacing: var(--ls-tight);
+  line-height: 1.15;
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  margin-bottom: var(--s-4);
+}
+
+/* Block Item Styles */
+.editor-block-item {
+  position: relative;
+  outline: none;
+  min-height: 24px;
+  line-height: 1.65;
+  font-size: 15px;
+  color: var(--text-1);
+  transition: background var(--dur-1);
+  padding: 2px 4px;
+  border-radius: var(--r-2);
+}
+.editor-block-item:hover {
+  background: rgba(255,255,255,0.02);
+}
+.editor-block-item[data-block-type="heading1"] {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-top: var(--s-6);
+}
+.editor-block-item[data-block-type="heading2"] {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: var(--s-4);
+}
+.editor-block-item[data-block-type="code"] {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-2);
+  border-radius: var(--r-4);
+  padding: var(--s-4);
+  white-space: pre;
+  color: var(--v-300);
+}
+.editor-block-item[data-block-type="callout"] {
+  background: rgba(110,74,255,0.1);
+  border-left: 3px solid var(--v-400);
+  border-radius: var(--r-3);
+  padding: var(--s-4);
+  font-size: 14px;
+  color: var(--text-1);
+}
+
+/* ------------------------------------------------------------
+   SLASH COMMANDS MENU DROPDOWN
+   ------------------------------------------------------------ */
+.slash-menu-box {
+  position: absolute;
+  width: 280px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-2);
+  border-radius: var(--r-5);
+  box-shadow: var(--shadow-xl);
+  z-index: 999;
+  padding: var(--s-2);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.slash-item-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  padding: var(--s-2) var(--s-3);
+  border-radius: var(--r-3);
+  font-size: var(--fs-sm);
+  color: var(--text-2);
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  text-align: left;
+  transition: all var(--dur-1);
+}
+.slash-item-btn:hover, .slash-item-btn.selected {
+  background: var(--bg-hover);
+  color: var(--text-1);
+}
+
+/* ------------------------------------------------------------
+   RIGHT SIDEBAR: AI WRITING ASSISTANT & KNOWLEDGE GRAPH
+   ------------------------------------------------------------ */
+.doc-right-sidebar {
+  width: 320px;
+  background: var(--bg-surface);
+  border-left: 1px solid var(--border-1);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-6);
+  padding: var(--s-6) var(--s-4);
+  overflow-y: auto;
+  flex-shrink: 0;
+}

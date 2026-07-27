@@ -1,0 +1,246 @@
+/* ============================================================
+   NOVA WORKSPACE — TASKS MODULE STYLES v5
+   Enterprise Task Hub: My Work, High-Density List, Kanban, Table, Calendar, Matrix & Focus Mode
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   TASKS HERO BANNER & METRICS
+   ------------------------------------------------------------ */
+.tasks-hero-banner {
+  background: linear-gradient(135deg, rgba(110,74,255,0.14) 0%, rgba(6,182,212,0.06) 60%, var(--bg-surface) 100%);
+  border: 1px solid var(--border-2);
+  border-radius: var(--r-7);
+  padding: var(--s-8);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.tasks-hero-title {
+  font-size: clamp(24px, 3.2vw, 36px);
+  font-weight: var(--fw-9);
+  color: var(--text-1);
+  letter-spacing: var(--ls-tight);
+  line-height: var(--lh-2);
+  margin-bottom: var(--s-2);
+}
+
+/* View Switcher Tabs */
+.task-views-tab-bar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-1);
+  border-radius: var(--r-5);
+  padding: 4px;
+  overflow-x: auto;
+}
+
+.task-view-tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 var(--s-4);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-5);
+  color: var(--text-3);
+  border-radius: var(--r-4);
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  transition: all var(--dur-2) var(--ease);
+  white-space: nowrap;
+}
+.task-view-tab:hover {
+  color: var(--text-1);
+  background: var(--bg-hover);
+}
+.task-view-tab.active {
+  color: var(--text-1);
+  font-weight: var(--fw-6);
+  background: var(--bg-float);
+  box-shadow: var(--shadow-xs);
+  border: 1px solid var(--border-1);
+}
+.task-view-tab.focus-mode-tab {
+  background: rgba(110,74,255,0.18);
+  color: var(--v-300);
+  border: 1px solid rgba(110,74,255,0.35);
+}
+.task-view-tab.focus-mode-tab:hover {
+  background: var(--v-600);
+  color: white;
+}
+
+/* ------------------------------------------------------------
+   HIGH DENSITY TASK LIST (LINEAR / THINGS 3 STYLE)
+   ------------------------------------------------------------ */
+.task-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+}
+
+.task-list-item-row {
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+  padding: var(--s-3) var(--s-4);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-1);
+  border-radius: var(--r-4);
+  transition: all var(--dur-2) var(--ease);
+  cursor: pointer;
+  position: relative;
+}
+.task-list-item-row:hover {
+  border-color: var(--v-500);
+  background: var(--bg-hover);
+  transform: translateX(2px);
+  box-shadow: var(--shadow-xs);
+}
+.task-list-item-row.completed-state {
+  opacity: 0.5;
+}
+.task-list-item-row.completed-state .task-row-title {
+  text-decoration: line-through;
+}
+
+.task-row-title {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-6);
+  color: var(--text-1);
+  letter-spacing: var(--ls-snug);
+}
+
+/* ------------------------------------------------------------
+   EISENHOWER PRIORITY MATRIX (2x2 GRID)
+   ------------------------------------------------------------ */
+.matrix-grid-2x2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: var(--s-4);
+  min-height: 520px;
+}
+
+.matrix-quadrant {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-1);
+  border-radius: var(--r-6);
+  padding: var(--s-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+
+.matrix-quadrant-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: var(--s-3);
+  border-bottom: 1px solid var(--border-1);
+}
+
+.matrix-quad-title {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-7);
+  color: var(--text-1);
+}
+
+/* ------------------------------------------------------------
+   FOCUS MODE (DEEP WORK MINIMALIST INTERFACE)
+   ------------------------------------------------------------ */
+.focus-mode-container {
+  background: linear-gradient(135deg, rgba(13,13,26,0.98) 0%, rgba(9,9,15,0.99) 100%);
+  border: 1px solid var(--border-2);
+  border-radius: var(--r-8);
+  padding: var(--s-12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: calc(100dvh - 200px);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+.focus-mode-container::before {
+  content: '';
+  position: absolute;
+  top: -150px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(110,74,255,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.pomodoro-timer-display {
+  font-size: clamp(60px, 8vw, 96px);
+  font-weight: var(--fw-9);
+  font-family: var(--font-mono);
+  color: var(--text-1);
+  letter-spacing: -0.04em;
+  margin: var(--s-6) 0;
+  text-shadow: 0 0 40px rgba(110,74,255,0.3);
+}
+
+.pomodoro-controls-row {
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+  margin-bottom: var(--s-8);
+}
+
+/* Split Task Detail Drawer */
+.task-detail-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(9,9,15,0.75);
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  justify-content: flex-end;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--dur-2) var(--ease);
+}
+.task-detail-drawer-backdrop.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.task-detail-drawer-body {
+  width: 780px;
+  max-width: 90vw;
+  height: 100dvh;
+  background: var(--bg-surface);
+  border-left: 1px solid var(--border-2);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  box-shadow: var(--shadow-xl);
+  animation: slide-left var(--dur-3) var(--ease) both;
+}
+
+.task-detail-split-content {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+  .task-detail-split-content {
+    grid-template-columns: 1fr;
+  }
+  .matrix-grid-2x2 {
+    grid-template-columns: 1fr;
+  }
+}

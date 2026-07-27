@@ -1,0 +1,392 @@
+/* ============================================================
+   NOVA WORKSPACE — PROJECTS MODULE STYLES v4
+   Enterprise Project Hub: Home Grid, Detail Header, 6 Views & AI Manager
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   PROJECTS HOME HERO
+   ------------------------------------------------------------ */
+.projects-hero-banner {
+  background: linear-gradient(135deg, rgba(110,74,255,0.14) 0%, rgba(6,182,212,0.06) 60%, var(--bg-surface) 100%);
+  border: 1px solid var(--border-2);
+  border-radius: var(--r-7);
+  padding: var(--s-8);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.projects-hero-title {
+  font-size: clamp(24px, 3.2vw, 36px);
+  font-weight: var(--fw-9);
+  color: var(--text-1);
+  letter-spacing: var(--ls-tight);
+  line-height: var(--lh-2);
+  margin-bottom: var(--s-2);
+}
+
+.projects-hero-metrics-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: var(--s-3);
+  margin-top: var(--s-6);
+}
+
+.hero-metric-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-1);
+  border-radius: var(--r-4);
+  padding: var(--s-3) var(--s-4);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.hero-metric-val {
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-8);
+  color: var(--text-1);
+}
+.hero-metric-lbl {
+  font-size: 11px;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+}
+
+/* Filter Bar */
+.projects-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-1);
+  border-radius: var(--r-5);
+  padding: var(--s-3) var(--s-4);
+  flex-wrap: wrap;
+}
+
+.filter-input-wrap {
+  flex: 1;
+  min-width: 220px;
+  position: relative;
+}
+
+.filter-select {
+  height: 36px;
+  padding: 0 var(--s-8) 0 var(--s-3);
+  background: var(--input-bg);
+  border: 1px solid var(--border-2);
+  border-radius: var(--r-3);
+  font-size: var(--fs-sm);
+  color: var(--text-1);
+  cursor: pointer;
+  outline: none;
+  appearance: none; -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%236b6b88' stroke-width='1.5'%3E%3Cpath d='M4 6l4 4 4-4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 14px;
+}
+
+/* ------------------------------------------------------------
+   PROJECT DETAIL STICKY HEADER & VIEWS NAV
+   ------------------------------------------------------------ */
+.project-detail-header {
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-1);
+  padding: var(--s-6) var(--s-8) 0;
+  position: sticky;
+  top: 60px;
+  z-index: 90;
+  backdrop-filter: blur(12px);
+}
+
+.project-title-meta-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--s-6);
+  margin-bottom: var(--s-4);
+}
+
+.project-key-badge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--fw-7);
+  padding: 2px 8px;
+  border-radius: var(--r-2);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-2);
+  color: var(--v-300);
+}
+
+.project-views-tab-bar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border-bottom: 1px solid var(--border-0);
+  overflow-x: auto;
+}
+
+.project-view-tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 40px;
+  padding: 0 var(--s-4);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-5);
+  color: var(--text-3);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all var(--dur-2) var(--ease);
+  white-space: nowrap;
+}
+.project-view-tab:hover {
+  color: var(--text-1);
+  background: var(--bg-hover);
+}
+.project-view-tab.active {
+  color: var(--v-300);
+  font-weight: var(--fw-6);
+  border-bottom-color: var(--v-500);
+  background: rgba(110,74,255,0.06);
+}
+
+/* ------------------------------------------------------------
+   VIEW 2: KANBAN BOARD
+   ------------------------------------------------------------ */
+.kanban-board-container {
+  display: flex;
+  gap: var(--s-4);
+  overflow-x: auto;
+  padding-bottom: var(--s-6);
+  min-height: calc(100dvh - 260px);
+}
+
+.kanban-column {
+  width: 300px;
+  flex-shrink: 0;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-1);
+  border-radius: var(--r-6);
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+}
+
+.kanban-column-header {
+  padding: var(--s-4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-1);
+}
+
+.kanban-column-title {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-7);
+  color: var(--text-1);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.kanban-wip-badge {
+  padding: 2px 7px;
+  border-radius: var(--r-full);
+  font-size: 11px;
+  font-weight: var(--fw-6);
+  background: var(--bg-elevated);
+  color: var(--text-3);
+  border: 1px solid var(--border-1);
+}
+
+.kanban-cards-scroll {
+  padding: var(--s-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+  overflow-y: auto;
+  flex: 1;
+}
+
+.kanban-task-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-1);
+  border-radius: var(--r-4);
+  padding: var(--s-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+  cursor: grab;
+  transition: all var(--dur-2) var(--ease);
+}
+.kanban-task-card:hover {
+  border-color: var(--v-500);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+.kanban-task-card:active {
+  cursor: grabbing;
+}
+
+/* ------------------------------------------------------------
+   VIEW 3: HIGH-DENSITY SPREADSHEET TABLE
+   ------------------------------------------------------------ */
+.spreadsheet-table-container {
+  width: 100%;
+  overflow-x: auto;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-1);
+  border-radius: var(--r-6);
+}
+
+.nova-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: var(--fs-sm);
+}
+
+.nova-table th {
+  padding: var(--s-3) var(--s-4);
+  background: var(--bg-elevated);
+  color: var(--text-3);
+  font-size: 11px;
+  font-weight: var(--fw-7);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wider);
+  border-bottom: 1px solid var(--border-1);
+}
+
+.nova-table td {
+  padding: var(--s-3) var(--s-4);
+  border-bottom: 1px solid var(--border-0);
+  color: var(--text-1);
+  vertical-align: middle;
+}
+.nova-table tr:hover td {
+  background: var(--bg-hover);
+}
+
+/* ------------------------------------------------------------
+   VIEW 4: TIMELINE & GANTT ROADMAP
+   ------------------------------------------------------------ */
+.gantt-roadmap-container {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-1);
+  border-radius: var(--r-6);
+  padding: var(--s-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-5);
+}
+
+.gantt-chart-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+  position: relative;
+}
+
+.gantt-row {
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+  height: 44px;
+}
+
+.gantt-label {
+  width: 220px;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-6);
+  color: var(--text-1);
+  flex-shrink: 0;
+}
+
+.gantt-track-space {
+  flex: 1;
+  height: 100%;
+  background: var(--bg-elevated);
+  border-radius: var(--r-3);
+  position: relative;
+  border: 1px solid var(--border-1);
+}
+
+.gantt-bar-element {
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  border-radius: var(--r-2);
+  background: linear-gradient(90deg, var(--v-600), var(--v-400));
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  font-size: 11px;
+  font-weight: var(--fw-6);
+  color: white;
+  box-shadow: 0 2px 8px rgba(110,74,255,0.4);
+}
+
+/* ------------------------------------------------------------
+   VIEW 6: AI PROJECT MANAGER & INSIGHTS PANEL
+   ------------------------------------------------------------ */
+.ai-pm-dashboard {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--s-6);
+}
+
+.ai-pm-card {
+  background: linear-gradient(135deg, rgba(110,74,255,0.15) 0%, var(--bg-surface) 80%);
+  border: 1px solid rgba(110,74,255,0.35);
+  border-radius: var(--r-6);
+  padding: var(--s-6);
+  box-shadow: var(--shadow-brand);
+}
+
+.ai-risk-alert-box {
+  padding: var(--s-4);
+  border-radius: var(--r-4);
+  background: rgba(245,158,11,0.12);
+  border: 1px solid rgba(245,158,11,0.3);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--s-3);
+  margin-bottom: var(--s-4);
+}
+
+/* Multi-Step Wizard Modal */
+.wizard-stepper-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--s-6);
+  position: relative;
+}
+.wizard-step-node {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bg-elevated);
+  border: 1.5px solid var(--border-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: var(--fw-7);
+  color: var(--text-3);
+  z-index: 2;
+}
+.wizard-step-node.active {
+  background: var(--v-600);
+  border-color: var(--v-400);
+  color: white;
+  box-shadow: 0 0 12px rgba(110,74,255,0.5);
+}
+.wizard-step-node.done {
+  background: var(--e-500);
+  border-color: var(--e-500);
+  color: white;
+}
