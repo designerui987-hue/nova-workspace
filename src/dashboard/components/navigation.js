@@ -1,9 +1,10 @@
 /**
- * Navigation Component — Top Nav & Left Sidebar
+ * Navigation Component — Top Nav & Grouped Left Sidebar
+ * Grouped navigation hierarchy (HOME, WORK, KNOWLEDGE, AUTOMATION, ADMIN).
  */
 
 export function renderTopNav(data) {
-  const unreadCount = data.notifications.filter(n => !n.read).length;
+  const unreadCount = data.notifications ? data.notifications.filter(n => !n.read).length : 0;
 
   return `
     <header class="top-nav">
@@ -55,37 +56,65 @@ export function renderTopNav(data) {
 }
 
 export function renderLeftSidebar(activeItem = 'dashboard') {
-  const navItems = [
-    { id: 'dashboard', label: 'Dashboard', icon: '🏠', badge: null },
-    { id: 'projects', label: 'Projects', icon: '📁', badge: '12' },
-    { id: 'tasks', label: 'Tasks', icon: '✅', badge: '8' },
-    { id: 'documents', label: 'Documents', icon: '📄', badge: null },
-    { id: 'meetings', label: 'Meetings', icon: '🎥', badge: '3' },
-    { id: 'calendar', label: 'Calendar', icon: '📅', badge: null },
-    { id: 'knowledge', label: 'Knowledge Hub', icon: '🧠', badge: null },
-    { id: 'ai-assistant', label: 'AI Assistant', icon: '✨', badge: 'AI', isAI: true },
-    { id: 'automation', label: 'Automation', icon: '⚡', badge: null },
-    { id: 'analytics', label: 'Analytics', icon: '📊', badge: null },
-    { id: 'settings', label: 'Settings', icon: '⚙️', badge: null }
+  const groups = [
+    {
+      title: 'HOME',
+      items: [
+        { id: 'dashboard', label: 'Dashboard', icon: '🏠', badge: null },
+        { id: 'inbox', label: 'Inbox', icon: '📥', badge: '5' },
+        { id: 'ai', label: 'AI Assistant', icon: '✨', badge: 'Copilot', isAI: true }
+      ]
+    },
+    {
+      title: 'WORK',
+      items: [
+        { id: 'projects', label: 'Projects', icon: '📁', badge: '12' },
+        { id: 'tasks', label: 'Tasks', icon: '✅', badge: '8' },
+        { id: 'meetings', label: 'Meetings', icon: '🎥', badge: '3' },
+        { id: 'calendar', label: 'Calendar', icon: '📅', badge: null }
+      ]
+    },
+    {
+      title: 'KNOWLEDGE',
+      items: [
+        { id: 'documents', label: 'Documents', icon: '📄', badge: null },
+        { id: 'knowledge', label: 'Knowledge Hub', icon: '🧠', badge: null }
+      ]
+    },
+    {
+      title: 'AUTOMATION',
+      items: [
+        { id: 'workflows', label: 'Workflows', icon: '⚡', badge: null },
+        { id: 'analytics', label: 'Analytics', icon: '📊', badge: null }
+      ]
+    },
+    {
+      title: 'ADMIN',
+      items: [
+        { id: 'settings', label: 'Settings', icon: '⚙️', badge: null }
+      ]
+    }
   ];
 
   return `
     <aside class="left-sidebar" id="app-left-sidebar">
-      <div class="sidebar-section-title">Workspace Menu</div>
-      <nav class="sidebar-nav-list" role="navigation">
-        ${navItems.map(item => `
-          <a href="#" class="sidebar-nav-item ${item.id === activeItem ? 'active' : ''}" data-nav-id="${item.id}">
-            <span class="sidebar-item-icon">${item.icon}</span>
-            <span class="nav-item-label">${item.label}</span>
-            ${item.badge ? `<span class="sidebar-badge ${item.isAI ? 'ai-sparkle' : ''}">${item.badge}</span>` : ''}
-          </a>
-        `).join('')}
-      </nav>
+      ${groups.map(group => `
+        <div class="sidebar-section-title">${group.title}</div>
+        <nav class="sidebar-nav-list" role="navigation">
+          ${group.items.map(item => `
+            <a href="#" class="sidebar-nav-item ${item.id === activeItem ? 'active' : ''}" data-nav-id="${item.id}">
+              <span class="sidebar-item-icon">${item.icon}</span>
+              <span class="nav-item-label">${item.label}</span>
+              ${item.badge ? `<span class="sidebar-badge ${item.isAI ? 'ai-sparkle' : ''}">${item.badge}</span>` : ''}
+            </a>
+          `).join('')}
+        </nav>
+      `).join('')}
 
       <div class="sidebar-footer">
         <a href="#" class="sidebar-nav-item" data-nav-id="context-toggle" id="context-panel-toggle-btn">
           <span class="sidebar-item-icon">⚡</span>
-          <span class="nav-item-label">Toggle Context Panel</span>
+          <span class="nav-item-label">Toggle AI Context</span>
         </a>
       </div>
     </aside>

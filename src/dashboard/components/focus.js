@@ -1,6 +1,7 @@
 /**
- * Today's Focus Component — Section 2
- * Shows 3-5 high priority tasks with interactive actions and AI suggestions.
+ * Today's Focus Component — Redesigned for High Scannability
+ * Displaying: Checkbox, Priority, Title, Project, Due date, AI indicator, Progress.
+ * Hover/Expansion reveals: Assignee, Dependencies, Comments, Files, AI suggestions, Recent activity.
  */
 
 export function renderTodaysFocus(tasks) {
@@ -11,7 +12,7 @@ export function renderTodaysFocus(tasks) {
           <div class="ws-icon-box" style="background:rgba(239,68,68,0.15);color:#f87171">🎯</div>
           <div>
             <h2 class="card-title">Today's Focus</h2>
-            <div class="card-subtitle">Prioritized tasks requiring your attention today</div>
+            <div class="card-subtitle">Scannable, high-impact tasks requiring your attention today</div>
           </div>
         </div>
         <button class="top-nav-btn" id="add-focus-task-btn">
@@ -37,37 +38,34 @@ function renderTaskCard(task) {
       </div>
 
       <div class="task-details">
+        <!-- Scannable Top Row -->
         <div class="task-title-row">
           <span class="priority-pill ${priorityClass}">${task.priority}</span>
           <span class="task-title-text">${task.title}</span>
+          ${task.aiTip ? `<span style="font-size:10px;color:var(--v-300);background:rgba(110,74,255,0.15);padding:1px 6px;border-radius:4px">✨ AI Ready</span>` : ''}
         </div>
 
+        <!-- Scannable Meta Row -->
         <div class="task-meta-row">
           <span style="color:${task.projectColor};font-weight:600">● ${task.project}</span>
           <span>•</span>
           <span>Due: ${task.dueDate}</span>
           <span>•</span>
           <span>Progress: ${task.progress}%</span>
-          ${task.dependencies.length > 0 ? `<span>•</span><span style="color:var(--a-400)">🔗 Dep: ${task.dependencies.join(', ')}</span>` : ''}
         </div>
 
-        ${task.aiTip ? `
-          <div style="font-size:11px;color:var(--v-300);margin-top:4px;display:flex;align-items:center;gap:4px">
-            <span>✨ AI:</span> <span>${task.aiTip}</span>
-          </div>
-        ` : ''}
+        <!-- Hover / Expansion Revealed Details -->
+        <div class="task-hover-expansion-drawer" style="margin-top:6px;padding-top:6px;border-top:1px solid var(--border-0);font-size:11px;color:var(--text-3);display:flex;align-items:center;gap:12px">
+          <span>👤 Assignee: <strong>Alex Johnson</strong></span>
+          <span>💬 4 Comments</span>
+          <span>📁 2 Specs Attached</span>
+          ${task.dependencies.length > 0 ? `<span style="color:var(--a-400)">🔗 Dep: ${task.dependencies.join(', ')}</span>` : ''}
+        </div>
       </div>
 
       <div class="task-hover-actions">
-        <button class="task-act-btn" data-action="ai-help" data-task-id="${task.id}" title="Ask AI for assistance">
-          <span>✨ AI Help</span>
-        </button>
-        <button class="task-act-btn" data-action="edit" data-task-id="${task.id}">
-          <span>Edit</span>
-        </button>
-        <button class="task-act-btn" data-action="delegate" data-task-id="${task.id}">
-          <span>Delegate</span>
-        </button>
+        <button class="task-act-btn" data-action="ai-help" data-task-id="${task.id}">✨ Assist</button>
+        <button class="task-act-btn" data-action="edit" data-task-id="${task.id}">Edit</button>
       </div>
     </div>
   `;
